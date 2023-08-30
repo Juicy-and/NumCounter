@@ -18,23 +18,24 @@ public:
 		void operator()(int n)
 		{
 			if (n % 3 == 0)
-			sum += n;
+			{
+				sum += n;
+				count++;
+			}
 		}
 		int sum;
+		int count = 0;
 	};
 	void get_sum()
 	{
 		Sum s = std::for_each(vec.begin(), vec.end(), Sum());
 		std::cout << "\n[OUT]: get_sum() = " << s.sum << " ";
 	}
-	void get_count()
-	{
-		int count = 0;
-		for (int i = 0; i < vec.size(); i++)
-			if (vec[i] % 3 == 0)
-			count++;
 
-		std::cout << "\n[OUT]: get_count() = " << count << " ";
+	void Get_count()
+	{
+		Sum s= std::for_each(vec.begin(), vec.end(), Sum());
+		std::cout << "\n[OUT]: get_count() = " << s.count << " ";
 	}
 
 	~Num_counter()
@@ -47,6 +48,6 @@ int main() {
 	Num_counter numc;
 	numc.in_vec();
 	numc.get_sum();
-	numc.get_count();
+	numc.Get_count();
 	return 0;
 }

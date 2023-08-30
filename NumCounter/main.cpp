@@ -32,7 +32,7 @@ public:
 		std::cout << "\n[OUT]: get_sum() = " << s.sum << " ";
 	}
 
-	void Get_count()
+	void get_count()
 	{
 		Sum s= std::for_each(vec.begin(), vec.end(), Sum());
 		std::cout << "\n[OUT]: get_count() = " << s.count << " ";
@@ -48,6 +48,6 @@ int main() {
 	Num_counter numc;
 	numc.in_vec();
 	numc.get_sum();
-	numc.Get_count();
+	numc.get_count();
 	return 0;
 }
